@@ -3,15 +3,23 @@
 
 import logo from "./logo.svg";
 import "./App.css";
-import React from "react";
+import React, { Fragment } from "react";
 
 //JSX 문법 모양
 //return 키워드 아래 html태그 사용
 function App() {
+  const name = "손주원";
+
   return (
+    //1) div로 자식요소 모두 묶어줘야함
     <div className="App">
-      <h2>안녕하세요</h2>
+      <h2>안녕하세요 {name}입니다.</h2>
     </div>
+
+    //2) div 대신 fragment도 씀
+    // <Fragment>
+    //   <h2>안녕하세요</h2>
+    // </Fragment>
   );
 }
 
