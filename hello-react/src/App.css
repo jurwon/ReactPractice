@@ -28,6 +28,15 @@
   color: #61dafb;
 }
 
+/* class로 생성해서 사용 */
+.reactTest {
+  background-color: aquamarine;
+  color: skyblue;
+  font-size: 100px;
+  font-weight: bold;
+  padding: 16px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
