@@ -7,6 +7,7 @@ const MyComp = (props) => {
     <div>
       <h1>이름 : {props.name}</h1>
       <h1>PW : {props.pw}</h1>
+      <h2>Child : {props.children}</h2>
     </div>
   );
 };
