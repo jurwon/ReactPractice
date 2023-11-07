@@ -21,7 +21,7 @@ class Count extends Component {
     return (
       <div className="count">
         <h1>{number}</h1>
-        <h1>{anotherNumber}</h1>
+        <h1>다른 숫자 : {anotherNumber}</h1>
 
         <button
           // onClick 의 값으로 함수를 사용
@@ -34,22 +34,33 @@ class Count extends Component {
         </button>
 
         <button
-          // onClick 의 값으로 함수를 사용
-          onClick={() => {
-            this.setState({ number: number + 2 });
-          }}
-        >
-          {" "}
-          +2{" "}
-        </button>
-
-        <button
           onClick={() => {
             this.setState({ number: number - 1 });
           }}
         >
           {" "}
           -1{" "}
+        </button>
+
+        <button
+          // this.state.number + 1  오류남 -> 함수로 대체
+          onClick={() => {
+            this.setState({ number: number + 1 });
+            this.setState(
+              (prevState) => {
+                return {
+                  number: prevState.number + 1,
+                };
+                //state값 변경 후, 특정 함수 호출
+              },
+              () => {
+                console.log("state변경 후 함수 호출");
+              }
+            );
+          }}
+        >
+          {" "}
+          +2{" "}
         </button>
       </div>
     );
