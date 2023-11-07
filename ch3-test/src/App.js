@@ -4,14 +4,7 @@ import FuncTest from "./Component/FuncTest";
 import ClassTest from "./Component/ClassTest";
 import Test from "./Component/test";
 import MyComp from "./Component/MyComp";
-
-const Header = () => {
-  return (
-    <header>
-      <h1>Header</h1>
-    </header>
-  );
-};
+import Header from "./Component/Header";
 
 function App() {
   return (
@@ -22,7 +15,9 @@ function App() {
       <Test />
       {/* 자식컴포넌트에게 props.name전달 */}
       {/* <MyComp name="sjw" pw="1234" /> */}
-      <MyComp>안녕</MyComp>
+      <MyComp name="sjw" pw="1234">
+        안녕
+      </MyComp>
     </div>
   );
 }
