@@ -11,6 +11,7 @@ import MyCount from "./MyCount";
 import MySay from "./MySay";
 import EventHandler from "./EventHandler";
 import Join from "./Join";
+import OddEven from "./OddEven";
 
 const Body = () => {
   return (
@@ -34,6 +35,7 @@ const Body = () => {
       {/* <MySay /> */}
       {/* <EventHandler /> */}
       <Join />
+      <OddEven />
     </div>
   );
 };

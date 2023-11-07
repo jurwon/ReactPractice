@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 const Join = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [gender, setGender] = useState("");
-  const [birth, setBirth] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [name, setName] = useState("");
+  // const [gender, setGender] = useState("");
+  // const [birth, setBirth] = useState("");
 
   const [state, setState] = useState({
     email: "",
@@ -15,25 +15,25 @@ const Join = () => {
     birth: "",
   });
 
-  const onEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
+  // const onEmailChange = (e) => {
+  //   setEmail(e.target.value);
+  // };
 
-  const onPasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+  // const onPasswordChange = (e) => {
+  //   setPassword(e.target.value);
+  // };
 
-  const onNameChange = (e) => {
-    setName(e.target.value);
-  };
+  // const onNameChange = (e) => {
+  //   setName(e.target.value);
+  // };
 
-  const onGenderChange = (e) => {
-    setGender(e.target.value);
-  };
+  // const onGenderChange = (e) => {
+  //   setGender(e.target.value);
+  // };
 
-  const onBirthChange = (e) => {
-    setBirth(e.target.value);
-  };
+  // const onBirthChange = (e) => {
+  //   setBirth(e.target.value);
+  // };
 
   const handleOnChange = (e) => {
     setState({
@@ -44,7 +44,7 @@ const Join = () => {
 
   return (
     <div>
-      <div>
+      {/* <div>
         <input value={email} onChange={onEmailChange} placeholder="email" />
       </div>
       <div>
@@ -68,6 +68,43 @@ const Join = () => {
       </div>
 
       <input type="date" value={birth} onChange={onBirthChange} />
+
+      <div>
+        <button>로그인</button>
+      </div> */}
+
+      <div>
+        <input
+          value={state.email}
+          onChange={handleOnChange}
+          placeholder="email"
+        />
+      </div>
+      <div>
+        <input
+          value={state.password}
+          onChange={handleOnChange}
+          type="password"
+          placeholder="password"
+        />
+      </div>
+      <div>
+        <input
+          value={state.name}
+          onChange={handleOnChange}
+          placeholder="name"
+        />
+      </div>
+
+      <div>
+        <select value={state.gender} onChange={handleOnChange}>
+          <option key={""}></option>
+          <option key={"남성"}>남성</option>
+          <option key={"여성"}>여성</option>
+        </select>
+      </div>
+
+      <input type="date" value={state.birth} onChange={handleOnChange} />
 
       <div>
         <button>로그인</button>
