@@ -7,6 +7,8 @@ import "../CSS/test.css";
 import MyComp from "./MyComp";
 import MyCompPublicFunction from "./MyCompPublicFunction";
 import Count from "./Count";
+import MyCount from "./MyCount";
+import MySay from "./MySay";
 
 const Body = () => {
   return (
@@ -26,7 +28,9 @@ const Body = () => {
         여긴 MyCompPublicFunction
       </MyCompPublicFunction> */}
 
-      <Count />
+      {/* <Count /> */}
+      <MyCount />
+      <MySay />
     </div>
   );
 };
