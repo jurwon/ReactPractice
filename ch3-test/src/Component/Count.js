@@ -12,14 +12,17 @@ class Count extends Component {
     //state , 초깃값 설정.
     this.state = {
       number: 0,
+      anotherNumber: 0,
     };
   }
   render() {
     //비구조화 할당
-    const { number } = this.state;
+    const { number, anotherNumber } = this.state;
     return (
-      <div>
+      <div className="count">
         <h1>{number}</h1>
+        <h1>{anotherNumber}</h1>
+
         <button
           // onClick 의 값으로 함수를 사용
           onClick={() => {
@@ -28,6 +31,16 @@ class Count extends Component {
         >
           {" "}
           +1{" "}
+        </button>
+
+        <button
+          // onClick 의 값으로 함수를 사용
+          onClick={() => {
+            this.setState({ number: number + 2 });
+          }}
+        >
+          {" "}
+          +2{" "}
         </button>
 
         <button
