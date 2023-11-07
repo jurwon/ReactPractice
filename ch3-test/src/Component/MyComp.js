@@ -11,4 +11,10 @@ const MyComp = (props) => {
   );
 };
 
+//type의 기본값 설정
+MyComp.defaultProps = {
+  name: "기본이름",
+  pw: "기본 1234",
+};
+
 export default MyComp;
