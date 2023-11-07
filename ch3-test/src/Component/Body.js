@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Test from "./test";
 import FuncTest from "./FuncTest";
 import ClassTest from "./ClassTest";
@@ -11,9 +11,21 @@ import MyCount from "./MyCount";
 import MySay from "./MySay";
 
 const Body = () => {
+  const [text, setText] = useState("");
+  const [date, setDate] = useState("");
+
+  const handleOnTextChange = (e) => {
+    setText(e.target.value);
+  };
+  const handleOnDateChange = (e) => {
+    setDate(e.target.value);
+  };
   return (
     <div className="body">
-      <h1>Body</h1>
+      <input value={text} onChange={handleOnTextChange} />
+      <div>{text}</div>
+
+      <input type="date" value={date} onChange={handleOnDateChange} />
       {/* <Test /> */}
       {/* <FuncTest /> */}
       {/* <ClassTest /> */}
@@ -29,8 +41,8 @@ const Body = () => {
       </MyCompPublicFunction> */}
 
       {/* <Count /> */}
-      <MyCount />
-      <MySay />
+      {/* <MyCount /> */}
+      {/* <MySay /> */}
     </div>
   );
 };
