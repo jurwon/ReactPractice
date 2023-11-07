@@ -9,23 +9,12 @@ import MyCompPublicFunction from "./MyCompPublicFunction";
 import Count from "./Count";
 import MyCount from "./MyCount";
 import MySay from "./MySay";
+import EventHandler from "./EventHandler";
+import Join from "./Join";
 
 const Body = () => {
-  const [text, setText] = useState("");
-  const [date, setDate] = useState("");
-
-  const handleOnTextChange = (e) => {
-    setText(e.target.value);
-  };
-  const handleOnDateChange = (e) => {
-    setDate(e.target.value);
-  };
   return (
     <div className="body">
-      <input value={text} onChange={handleOnTextChange} />
-      <div>{text}</div>
-
-      <input type="date" value={date} onChange={handleOnDateChange} />
       {/* <Test /> */}
       {/* <FuncTest /> */}
       {/* <ClassTest /> */}
@@ -43,6 +32,8 @@ const Body = () => {
       {/* <Count /> */}
       {/* <MyCount /> */}
       {/* <MySay /> */}
+      {/* <EventHandler /> */}
+      <Join />
     </div>
   );
 };
