@@ -31,8 +31,9 @@ MyComp.defaultProps = {
 };
 
 //props의 type확인
-MyComp.prototype = {
-  name: PropTypes.string,
+MyComp.propTypes = {
+  //isRequired :  유니크 (notNull).
+  name: PropTypes.string.isRequired,
   pw: PropTypes.string,
 };
 
