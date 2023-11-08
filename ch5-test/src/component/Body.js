@@ -8,6 +8,7 @@ import Main from "./Main";
 import MyCount from "./MyCount";
 import Login from "./Login";
 import RefPracticeScrollTest from "../ch5_component/RefPracticeScrollTest";
+import DataListKeyAddDelTest from "../ch6_component/DataListKeyAddDelTest";
 
 const Body = () => {
   return (
@@ -18,6 +19,10 @@ const Body = () => {
           <Route path="Join" element={<Join />} />
           <Route path="Login" element={<Login />} />
           <Route path="MyCount" element={<MyCount />} />
+          <Route
+            path="DataListKeyAddDelTest"
+            element={<DataListKeyAddDelTest />}
+          />
           <Route
             path="RefPracticeScrollTest"
             element={<RefPracticeScrollTest />}

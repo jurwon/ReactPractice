@@ -61,6 +61,13 @@ const Main = () => {
           >
             RefPracticeScrollTest
           </Button>
+          <br />
+          <Button
+            title="DataListKeyAddDelTest"
+            onClick={() => navigate("/DataListKeyAddDelTest")}
+          >
+            DataListKeyAddDelTest
+          </Button>
         </Container>
       </div>
     </Wrapper>
