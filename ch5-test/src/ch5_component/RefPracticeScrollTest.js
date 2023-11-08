@@ -25,7 +25,7 @@ const RefPracticeScrollTest = () => {
   const InnerStyle = styled.div`
     width: 100%;
     height: 700px;
-    background: linear-gradient(yellow, red);
+    background: linear-gradient(#aedefc, #fa7070);
   `;
 
   return (
@@ -34,18 +34,10 @@ const RefPracticeScrollTest = () => {
         <InnerStyle></InnerStyle>
       </StyleBox>
       <br />
-      <Button
-        title="맨 밑으로"
-        type="primary"
-        onClick={() => (box.current.scrollTop = 350)}
-      >
+      <Button title="맨 밑으로" onClick={() => (box.current.scrollTop = 350)}>
         ⏬
       </Button>
-      <Button
-        title="맨 위로"
-        type="primary"
-        onClick={() => (box.current.scrollTop = 0)}
-      >
+      <Button title="맨 위로" onClick={() => (box.current.scrollTop = 0)}>
         ⏫
       </Button>
     </div>

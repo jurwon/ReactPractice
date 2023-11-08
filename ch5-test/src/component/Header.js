@@ -23,6 +23,7 @@ const Logo = styled.div`
   font-size: 24px;
   font-weight: bold;
   color: #fa7070;
+  padding: 10px;
 `;
 
 const Navigation = styled.nav`
