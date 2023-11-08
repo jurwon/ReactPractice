@@ -8,10 +8,14 @@ const Main = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="main">
       <h1>메인 페이지</h1>
       <Button title="회원가입하기" onClick={() => navigate("/Join")}>
         회원가입하기
+      </Button>
+      <br />
+      <Button title="MyCount" onClick={() => navigate("/MyCount")}>
+        MyCount
       </Button>
     </div>
   );

@@ -9,11 +9,19 @@
   padding: 20px;
 }
 .count {
+  text-align: center;
+}
+.count2 {
+  display: inline-block;
   font-family: arial;
   font-size: 24px;
   margin: 25px;
   width: 350px;
   height: 300px;
   outline: dashed 1px black;
-  text-align: center;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
