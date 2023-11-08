@@ -1,9 +1,9 @@
 import React from "react";
-import { Avatar } from "antd";
+import { Avatar, Button } from "antd";
 import { useState, useRef } from "react";
 
 const Join = () => {
-  const [Image, setImage] = useState("");
+  const [Image, setImage] = useState(require("../image/login.gif"));
   const [File, setFile] = useState("");
 
   //input태그 접근 위한 ref속성
@@ -15,9 +15,7 @@ const Join = () => {
       setFile(e.target.files[0]);
     } else {
       //취소됐다면 -> 기본 프로필 사진
-      setImage(
-        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-      );
+      setImage();
       return;
     }
 
@@ -90,22 +88,22 @@ const Join = () => {
       <Avatar
         src={Image}
         size={200}
-        onClick={() => fileInput.current.Click()}
+        onClick={() => fileInput.current.click()}
       />
       <input
         type="file"
         style={{ display: "none" }}
-        accept="image/jpg, image/png, image/jpeg"
+        accept="image/jpg, image/png, image/jpeg, image.gif"
         name="profileImg"
         onChange={onChangeImage}
         ref={fileInput}
       />
 
-      <h2>이메일 : {email}</h2>
-      <h2>패스워드 : {password}</h2>
-      <h2>이름 : {name}</h2>
-      <h2>성별 : {gender}</h2>
-      <h2>생일 : {birth}</h2>
+      <h5>이메일 : {email}</h5>
+      <h5>패스워드 : {password}</h5>
+      <h5>이름 : {name}</h5>
+      <h5>성별 : {gender}</h5>
+      <h5>생일 : {birth}</h5>
 
       <div>
         <input
@@ -147,9 +145,11 @@ const Join = () => {
       </div>
 
       <input name="birth" type="date" value={birth} onChange={onChangeForm} />
-
+      <br />
+      <br />
+      <br />
       <div>
-        <button onClick={onClick}>확인</button>
+        <Button onClick={onClick}>회원가입</Button>
       </div>
     </div>
   );
