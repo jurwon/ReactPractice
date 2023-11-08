@@ -6,6 +6,7 @@ import { Button, Space, DatePicker, version } from "antd";
 import Join from "./Join";
 import Main from "./Main";
 import MyCount from "./MyCount";
+import Login from "./Login";
 
 const Body = () => {
   return (
@@ -14,6 +15,7 @@ const Body = () => {
         <Routes>
           <Route index element={<Main />} />
           <Route path="Join" element={<Join />} />
+          <Route path="Login" element={<Login />} />
           <Route path="MyCount" element={<MyCount />} />
         </Routes>
       </div>

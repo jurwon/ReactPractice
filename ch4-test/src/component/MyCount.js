@@ -21,6 +21,7 @@ const MyCount = () => {
 
   return (
     <div className="count">
+      <h1>Count</h1>
       <div className="count2">
         <h1>{number}</h1>
         {/* <h1>다른 숫자 : {anotherNumber}</h1> */}

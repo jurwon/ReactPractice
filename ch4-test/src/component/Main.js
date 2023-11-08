@@ -9,7 +9,7 @@ const MainTitleTextCss = styled.p`
   font-size: 30px;
   font-weight: bold;
   text-align: center;
-  color: #ffdfdf;
+  color: #fa7070;
 `;
 
 const MainTextCss = styled.p`

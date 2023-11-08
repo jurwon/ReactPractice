@@ -15,7 +15,7 @@ const Join = () => {
       setFile(e.target.files[0]);
     } else {
       //취소됐다면 -> 기본 프로필 사진
-      setImage();
+      setImage(require("../image/login.gif"));
       return;
     }
 
@@ -73,6 +73,7 @@ const Join = () => {
       gender: "",
       birth: "",
     });
+    setImage(require("../image/login.gif"));
   };
 
   // 키보드에서 엔터 키 입력시, 클릭 이벤트 호출 연결 확인.
