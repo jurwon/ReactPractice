@@ -1,0 +1,19 @@
+.funcComp {
+  background-color: blueviolet;
+  color: aquamarine;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.body {
+  background-color: rgb(226, 43, 165);
+  padding: 20px;
+}
+.count {
+  font-family: arial;
+  font-size: 24px;
+  margin: 25px;
+  width: 350px;
+  height: 300px;
+  outline: dashed 1px black;
+  text-align: center;
+}
