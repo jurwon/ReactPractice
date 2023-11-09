@@ -10,6 +10,7 @@ import Login from "./Login";
 import RefPracticeScrollTest from "../ch5_component/RefPracticeScrollTest";
 import DataListKeyAddDelTest from "../ch6_component/DataListKeyAddDelTest";
 import InfoTestUseState from "../ch8_component/InfoTestUseState";
+import InfoTestUseEffect from "../ch8_component/InfoTestUseEffect";
 
 const Body = () => {
   return (
@@ -29,6 +30,7 @@ const Body = () => {
             element={<RefPracticeScrollTest />}
           />
           <Route path="InfoTestUseState" element={<InfoTestUseState />} />
+          <Route path="InfoTestUseEffect" element={<InfoTestUseEffect />} />
         </Routes>
       </div>
     </BrowserRouter>

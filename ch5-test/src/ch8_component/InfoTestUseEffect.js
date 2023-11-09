@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-const InfoTestUseState = () => {
+const InfoTestUseEffect = () => {
+  console.log("useEffect호출됨");
+  console.log({
+    name,
+    nickname,
+  });
+
   const [name, setName] = useState("");
   const [nickname, setNickname] = useState("");
 
@@ -15,7 +21,7 @@ const InfoTestUseState = () => {
 
   return (
     <div>
-      <h1>UseState</h1>
+      <h1>UseEffect</h1>
       <div>
         <input value={name} onChange={onChangeName} placeholder="name"></input>
         <br />
@@ -37,4 +43,4 @@ const InfoTestUseState = () => {
   );
 };
 
-export default InfoTestUseState;
+export default InfoTestUseEffect;

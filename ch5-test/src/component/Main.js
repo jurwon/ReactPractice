@@ -73,7 +73,14 @@ const Main = () => {
             title="InfoTestUseState"
             onClick={() => navigate("/InfoTestUseState")}
           >
-            InfoTestUseState
+            UseState
+          </Button>
+          <br />
+          <Button
+            title="InfoTestUseEffect"
+            onClick={() => navigate("/InfoTestUseEffect")}
+          >
+            UseEffect
           </Button>
         </Container>
       </div>
