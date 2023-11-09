@@ -32,7 +32,7 @@ const InfoTestUseEffect = () => {
     //변경 이전 data
     return () => {
       console.log("후처리 함수 호출");
-      console.log(name);
+      console.log("name : " + name + ", nickname : " + nickname);
     };
   }, [name, nickname]);
 

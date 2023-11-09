@@ -82,6 +82,12 @@ const Main = () => {
           >
             UseEffect
           </Button>
+          <Button
+            title="CountUseReucerTest"
+            onClick={() => navigate("/CountUseReucerTest")}
+          >
+            UseReucer
+          </Button>
         </Container>
       </div>
     </Wrapper>
