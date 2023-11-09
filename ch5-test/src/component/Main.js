@@ -104,6 +104,13 @@ const Main = () => {
             AverageUseMemo
           </Button>
           <br />
+          <Button
+            title="AverageUseCallback"
+            onClick={() => navigate("/AverageUseCallback")}
+          >
+            AverageUseCallback
+          </Button>
+          <br />
         </Container>
       </div>
     </Wrapper>
