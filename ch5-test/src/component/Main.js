@@ -68,6 +68,13 @@ const Main = () => {
           >
             DataListKeyAddDelTest
           </Button>
+          <br />
+          <Button
+            title="LifeCycleTest"
+            onClick={() => navigate("/LifeCycleTest")}
+          >
+            LifeCycleTest
+          </Button>
         </Container>
       </div>
     </Wrapper>
