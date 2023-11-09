@@ -11,7 +11,7 @@ import RefPracticeScrollTest from "../ch5_component/RefPracticeScrollTest";
 import DataListKeyAddDelTest from "../ch6_component/DataListKeyAddDelTest";
 import InfoTestUseState from "../ch8_component/InfoTestUseState";
 import InfoTestUseEffect from "../ch8_component/InfoTestUseEffect";
-import CountUseReucerTest from "../ch8_component/CountUseReucerTest";
+import CountUseReducerTest from "../ch8_component/CountUseReducerTest";
 
 const Body = () => {
   return (
@@ -32,7 +32,7 @@ const Body = () => {
           />
           <Route path="InfoTestUseState" element={<InfoTestUseState />} />
           <Route path="InfoTestUseEffect" element={<InfoTestUseEffect />} />
-          <Route path="CountUseReucerTest" element={<CountUseReucerTest />} />
+          <Route path="CountUseReducerTest" element={<CountUseReducerTest />} />
         </Routes>
       </div>
     </BrowserRouter>

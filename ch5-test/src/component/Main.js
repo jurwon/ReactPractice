@@ -82,11 +82,12 @@ const Main = () => {
           >
             UseEffect
           </Button>
+          <br />
           <Button
-            title="CountUseReucerTest"
-            onClick={() => navigate("/CountUseReucerTest")}
+            title="CountUseReducerTest"
+            onClick={() => navigate("/CountUseReducerTest")}
           >
-            UseReucer
+            UseReducer
           </Button>
         </Container>
       </div>
