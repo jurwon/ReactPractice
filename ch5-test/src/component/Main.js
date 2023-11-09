@@ -96,6 +96,14 @@ const Main = () => {
           >
             UseReducer_Info
           </Button>
+          <br />
+          <Button
+            title="AverageUseMemo"
+            onClick={() => navigate("/AverageUseMemo")}
+          >
+            AverageUseMemo
+          </Button>
+          <br />
         </Container>
       </div>
     </Wrapper>
