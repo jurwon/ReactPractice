@@ -65,6 +65,9 @@ const Header = () => {
             <li>
               <a href="/Login">Login</a>
             </li>
+            <li>
+              <a href="/TodoList">TodoList</a>
+            </li>
           </ul>
         </Navigation>
       </HeaderContent>

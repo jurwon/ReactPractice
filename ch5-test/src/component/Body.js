@@ -7,6 +7,7 @@ import Join from "./Join";
 import Main from "./Main";
 import MyCount from "./MyCount";
 import Login from "./Login";
+import TodoList from "../todolist_component/TodoList";
 import RefPracticeScrollTest from "../ch5_component/RefPracticeScrollTest";
 import DataListKeyAddDelTest from "../ch6_component/DataListKeyAddDelTest";
 import InfoTestUseState from "../ch8_component/InfoTestUseState";
@@ -25,6 +26,7 @@ const Body = () => {
           <Route path="Join" element={<Join />} />
           <Route path="Login" element={<Login />} />
           <Route path="MyCount" element={<MyCount />} />
+          <Route path="TodoList" element={<TodoList />} />
           <Route
             path="DataListKeyAddDelTest"
             element={<DataListKeyAddDelTest />}
