@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Button } from "antd";
 
 const InfoTestUseEffect = () => {
   const [name, setName] = useState("");
@@ -36,6 +37,7 @@ const InfoTestUseEffect = () => {
   }, [name, nickname]);
 
   //버튼 추가해서 visible속성 확인
+  const [visible, setVisible] = useState("true");
 
   //이벤트 핸들러
   const onChangeName = (e) => {
@@ -49,7 +51,16 @@ const InfoTestUseEffect = () => {
   return (
     <div>
       <h1>UseEffect</h1>
-      <div>
+      <Button
+        onClick={() => {
+          setVisible(!visible);
+        }}
+      >
+        {}
+        {visible ? "hide" : "show"}
+      </Button>
+
+      <div style={visible ? { visible: true } : { display: "none" }}>
         <input value={name} onChange={onChangeName} placeholder="name"></input>
         <br />
         <input
@@ -57,14 +68,15 @@ const InfoTestUseEffect = () => {
           onChange={onChangeNickname}
           placeholder="nickname"
         ></input>
-      </div>
-      <div>
-        <h3>
-          이름 : <b>{name}</b>
-        </h3>
-        <h3>
-          닉네임 : <b>{nickname}</b>
-        </h3>
+
+        <div>
+          <h3>
+            이름 : <b>{name}</b>
+          </h3>
+          <h3>
+            닉네임 : <b>{nickname}</b>
+          </h3>
+        </div>
       </div>
     </div>
   );
