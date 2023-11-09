@@ -9,7 +9,7 @@
 // a : 6 , b : 4 => 10
 // a : 10 , b : 5 => 15
 
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { Button } from "antd";
 
 const doAverage = (numbers) => {
@@ -33,6 +33,12 @@ const AverageUseMemo = () => {
     setNumber("");
   };
 
+  //임의로 결과값을 만들어서, 이 값이 변경될때만 연산하기
+  // const avgResult = useMemo(콜백함수, 의존성 배열)
+  // list배열에 숫자 추가되면서 그때, 연산이 수행됨
+  // 전에는 값을 입력하는 순간에도 연산 수행
+  const avgResult = useMemo(() => doAverage(list), [list]);
+
   return (
     <div>
       <h1>AverageUseMemo</h1>
@@ -47,7 +53,11 @@ const AverageUseMemo = () => {
         ))}
       </ul>
       <br />
-      <div>평균값 : {doAverage(list)}</div>
+      {/* useMemo사용 전 */}
+      {/* <div>평균값 : {doAverage(list)}</div> */}
+
+      {/* useMemo 사용 후 */}
+      <div>평균값 : {avgResult}</div>
     </div>
   );
 };
