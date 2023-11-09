@@ -70,10 +70,10 @@ const Main = () => {
           </Button>
           <br />
           <Button
-            title="LifeCycleTest"
-            onClick={() => navigate("/LifeCycleTest")}
+            title="InfoTestUseState"
+            onClick={() => navigate("/InfoTestUseState")}
           >
-            LifeCycleTest
+            InfoTestUseState
           </Button>
         </Container>
       </div>

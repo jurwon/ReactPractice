@@ -9,7 +9,7 @@ import MyCount from "./MyCount";
 import Login from "./Login";
 import RefPracticeScrollTest from "../ch5_component/RefPracticeScrollTest";
 import DataListKeyAddDelTest from "../ch6_component/DataListKeyAddDelTest";
-import LifeCycleTest from "../ch7_component/LifeCycleTest";
+import InfoTestUseState from "../ch8_component/InfoTestUseState";
 
 const Body = () => {
   return (
@@ -28,7 +28,7 @@ const Body = () => {
             path="RefPracticeScrollTest"
             element={<RefPracticeScrollTest />}
           />
-          <Route path="LifeCycleTest" element={<LifeCycleTest />} />
+          <Route path="InfoTestUseState" element={<InfoTestUseState />} />
         </Routes>
       </div>
     </BrowserRouter>
