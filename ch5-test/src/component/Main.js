@@ -87,7 +87,14 @@ const Main = () => {
             title="CountUseReducerTest"
             onClick={() => navigate("/CountUseReducerTest")}
           >
-            UseReducer
+            UseReducer_Count
+          </Button>
+          <br />
+          <Button
+            title="InfoUseReducer"
+            onClick={() => navigate("/InfoUseReducer")}
+          >
+            UseReducer_Info
           </Button>
         </Container>
       </div>

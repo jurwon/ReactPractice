@@ -12,6 +12,7 @@ import DataListKeyAddDelTest from "../ch6_component/DataListKeyAddDelTest";
 import InfoTestUseState from "../ch8_component/InfoTestUseState";
 import InfoTestUseEffect from "../ch8_component/InfoTestUseEffect";
 import CountUseReducerTest from "../ch8_component/CountUseReducerTest";
+import InfoUseReducer from "../ch8_component/InfoUseReducer";
 
 const Body = () => {
   return (
@@ -33,6 +34,7 @@ const Body = () => {
           <Route path="InfoTestUseState" element={<InfoTestUseState />} />
           <Route path="InfoTestUseEffect" element={<InfoTestUseEffect />} />
           <Route path="CountUseReducerTest" element={<CountUseReducerTest />} />
+          <Route path="InfoUseReducer" element={<InfoUseReducer />} />
         </Routes>
       </div>
     </BrowserRouter>
