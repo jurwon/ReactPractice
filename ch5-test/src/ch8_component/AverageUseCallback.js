@@ -16,6 +16,7 @@ const AverageUseCallback = () => {
   //변경 후
   //의존성 배열 모양 -> []빈 배열이라서, 마운트시 한번만 함수 생성
   const onChange = useCallback((e) => {
+    console.log("onChange");
     setNumber(e.target.value);
   }, []);
 
@@ -28,6 +29,7 @@ const AverageUseCallback = () => {
   //변경 후
   const onInsert = useCallback(
     (e) => {
+      console.log("onInsert");
       const nextList = list.concat(parseInt(number));
       setList(nextList);
       setNumber("");
