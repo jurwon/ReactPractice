@@ -15,7 +15,7 @@ const InfoTestUseEffect = () => {
       name,
       nickname,
     });
-  });
+  }, [name, nickname]);
 
   //이벤트 핸들러
   const onChangeName = (e) => {
