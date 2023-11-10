@@ -21,6 +21,7 @@ import AverageUseParams from "../ch8_component/AverageUseParams";
 import InfoTestCustomHooks from "../ch8_component/InfoTestCustomHooks";
 import TestSass from "../ch9_component/TestSass";
 import StyledComponent from "../ch9_component/StyledComponent";
+import TodoMain from "../ch10_TodoTest/TodoMain";
 
 const Body = () => {
   return (
@@ -54,6 +55,7 @@ const Body = () => {
           <Route path="InfoTestCustomHooks" element={<InfoTestCustomHooks />} />
           <Route path="TestSass" element={<TestSass />} />
           <Route path="StyledComponent" element={<StyledComponent />} />
+          <Route path="TodoMain" element={<TodoMain />} />
         </Routes>
       </div>
     </BrowserRouter>

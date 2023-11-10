@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "../CSS/todoList.css";
 import TodoItem from "./TodoItem";
+import { AiFillApple } from "react-icons/ai";
+import { HiPencil } from "react-icons/hi";
 
 const mockTodo = [
   {
@@ -24,6 +26,20 @@ const mockTodo = [
 ];
 
 const TodoList = () => {
+  //item 상태관리
+  const [todo, setTodo] = useState([mockTodo]);
+
+  const onCreate = (content) => {
+    const newItem = {
+      id: 0,
+      content,
+      isDone: false,
+      createDate: new Date().getTime(),
+    };
+
+    setTodo([newItem, ...todo]);
+  };
+
   return (
     <div className="container">
       <div className="header">
@@ -32,7 +48,11 @@ const TodoList = () => {
       </div>
 
       <div className="TodoEditor">
-        <h4>새로운 Todo 작성하기 💡</h4>
+        <h4>
+          새로운 Todo 작성하기
+          <HiPencil />
+        </h4>
+
         <div className="editor_wrapper">
           <input placeholder="새로운 Todo.." />
           <button>추가</button>
