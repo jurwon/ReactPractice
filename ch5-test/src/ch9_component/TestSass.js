@@ -24,6 +24,9 @@ const TestSass = () => {
       <h1>CSS MODULE확인</h1>
       <div className={cssModule.wrapper}>css.module.test</div>
       <div className="testGlobal">css.module.test</div>
+      <div className={`${cssModule.wrapper} ${cssModule.wrapper2}`}>
+        css.module 2개 적용
+      </div>
     </div>
   );
 };

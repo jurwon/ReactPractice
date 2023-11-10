@@ -9,6 +9,15 @@
   width: 100%;
 }
 
+.wrapper:hover {
+  font-size: 3rem;
+}
+
+.wrapper2 {
+  background: #aedefc;
+  color: black;
+}
+
 /* 전역 */
 :global .testGlobal {
   font-weight: 800;
