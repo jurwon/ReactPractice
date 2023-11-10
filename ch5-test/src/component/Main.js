@@ -118,6 +118,13 @@ const Main = () => {
             AverageUseRef
           </Button>
           <br />
+          <Button
+            title="AverageUseParams"
+            onClick={() => navigate("/useParams")}
+          >
+            AverageUseParams
+          </Button>
+          <br />
         </Container>
       </div>
     </Wrapper>

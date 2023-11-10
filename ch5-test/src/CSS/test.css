@@ -32,3 +32,10 @@ footer {
   height: 300px;
   outline: dashed 1px black;
 }
+ul {
+  list-style-type: none;
+}
+input:focus {
+  outline: none;
+  border: 1px solid #f875aa;
+}

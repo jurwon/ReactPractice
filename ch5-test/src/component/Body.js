@@ -17,6 +17,7 @@ import InfoUseReducer from "../ch8_component/InfoUseReducer";
 import AverageUseMemo from "../ch8_component/AverageUseMemo";
 import AverageUseCallback from "../ch8_component/AverageUseCallback";
 import AverageUseRef from "../ch8_component/AverageUseRef";
+import AverageUseParams from "../ch8_component/AverageUseParams";
 
 const Body = () => {
   return (
@@ -43,6 +44,9 @@ const Body = () => {
           <Route path="AverageUseMemo" element={<AverageUseMemo />} />
           <Route path="AverageUseCallback" element={<AverageUseCallback />} />
           <Route path="AverageUseRef" element={<AverageUseRef />} />
+
+          {/* useParmas설정 */}
+          <Route path="useParams/:id" element={<AverageUseParams />} />
         </Routes>
       </div>
     </BrowserRouter>
