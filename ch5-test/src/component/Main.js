@@ -132,6 +132,10 @@ const Main = () => {
             InfoTestCustomHooks
           </Button>
           <br />
+          <Button title="TestSass" onClick={() => navigate("/TestSass")}>
+            TestSass
+          </Button>
+          <br />
         </Container>
       </div>
     </Wrapper>

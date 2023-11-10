@@ -19,6 +19,7 @@ import AverageUseCallback from "../ch8_component/AverageUseCallback";
 import AverageUseRef from "../ch8_component/AverageUseRef";
 import AverageUseParams from "../ch8_component/AverageUseParams";
 import InfoTestCustomHooks from "../ch8_component/InfoTestCustomHooks";
+import TestSass from "../ch9_component/TestSass";
 
 const Body = () => {
   return (
@@ -50,6 +51,7 @@ const Body = () => {
           <Route path="useParams/:id" element={<AverageUseParams />} />
 
           <Route path="InfoTestCustomHooks" element={<InfoTestCustomHooks />} />
+          <Route path="TestSass" element={<TestSass />} />
         </Routes>
       </div>
     </BrowserRouter>
