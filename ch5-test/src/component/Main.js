@@ -143,10 +143,6 @@ const Main = () => {
             StyledComponent
           </Button>
           <br />
-          <Button title="TodoMain" onClick={() => navigate("/TodoMain")}>
-            TodoMain
-          </Button>
-          <br />
         </Container>
       </div>
     </Wrapper>
