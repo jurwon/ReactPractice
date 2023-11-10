@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../CSS/TodoItem.css";
 
 const TodoItem = () => {
+  //item 상태관리
+  const [todo, setTodo] = useState([]);
+
   return (
     <div className="TodoItem">
       <div className="checkbox_col">
