@@ -62,3 +62,9 @@
   outline: none;
   border-bottom: 1px solid #fa7070;
 }
+
+.TodoList .list_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
