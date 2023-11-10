@@ -136,6 +136,13 @@ const Main = () => {
             TestSass
           </Button>
           <br />
+          <Button
+            title="StyledComponent"
+            onClick={() => navigate("/StyledComponent")}
+          >
+            StyledComponent
+          </Button>
+          <br />
         </Container>
       </div>
     </Wrapper>

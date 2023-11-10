@@ -2,6 +2,27 @@ import React from "react";
 import "../CSS/todoList.css";
 import TodoItem from "./TodoItem";
 
+const mockTodo = [
+  {
+    id: 0,
+    isDone: false,
+    content: "React 복습",
+    createDate: new Date().getTime(),
+  },
+  {
+    id: 1,
+    isDone: false,
+    content: "React 복습",
+    createDate: new Date().getTime(),
+  },
+  {
+    id: 2,
+    idDone: true,
+    content: "React 복습",
+    createDate: new Date().getTime(),
+  },
+];
+
 const TodoList = () => {
   return (
     <div className="container">
