@@ -18,6 +18,7 @@ import AverageUseMemo from "../ch8_component/AverageUseMemo";
 import AverageUseCallback from "../ch8_component/AverageUseCallback";
 import AverageUseRef from "../ch8_component/AverageUseRef";
 import AverageUseParams from "../ch8_component/AverageUseParams";
+import InfoTestCustomHooks from "../ch8_component/InfoTestCustomHooks";
 
 const Body = () => {
   return (
@@ -47,6 +48,8 @@ const Body = () => {
 
           {/* useParmas설정 */}
           <Route path="useParams/:id" element={<AverageUseParams />} />
+
+          <Route path="InfoTestCustomHooks" element={<InfoTestCustomHooks />} />
         </Routes>
       </div>
     </BrowserRouter>

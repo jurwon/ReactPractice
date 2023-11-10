@@ -125,6 +125,13 @@ const Main = () => {
             AverageUseParams
           </Button>
           <br />
+          <Button
+            title="InfoTestCustomHooks"
+            onClick={() => navigate("/InfoTestCustomHooks")}
+          >
+            InfoTestCustomHooks
+          </Button>
+          <br />
         </Container>
       </div>
     </Wrapper>
