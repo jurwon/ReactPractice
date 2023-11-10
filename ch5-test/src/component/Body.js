@@ -16,6 +16,7 @@ import CountUseReducerTest from "../ch8_component/CountUseReducerTest";
 import InfoUseReducer from "../ch8_component/InfoUseReducer";
 import AverageUseMemo from "../ch8_component/AverageUseMemo";
 import AverageUseCallback from "../ch8_component/AverageUseCallback";
+import AverageUseRef from "../ch8_component/AverageUseRef";
 
 const Body = () => {
   return (
@@ -41,6 +42,7 @@ const Body = () => {
           <Route path="InfoUseReducer" element={<InfoUseReducer />} />
           <Route path="AverageUseMemo" element={<AverageUseMemo />} />
           <Route path="AverageUseCallback" element={<AverageUseCallback />} />
+          <Route path="AverageUseRef" element={<AverageUseRef />} />
         </Routes>
       </div>
     </BrowserRouter>
