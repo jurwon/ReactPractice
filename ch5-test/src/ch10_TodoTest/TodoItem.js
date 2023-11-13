@@ -61,10 +61,12 @@ const CheckBox = styled.div`
 `;
 
 //todo = {id: 1, text: "더미 데이터 요소 1번입니다.",checked: true}
-const TodoItem = ({ todo }) => {
+//onRemove : TodoMain -> TodoList -> TodoListItem 계속 넘김 (비효율)
+const TodoItem = ({ todo, onRemove }) => {
   //const text = todo.text
   //const checked = todo.checked
-  const { text, checked } = todo;
+  //const id = todo.id
+  const { id, text, checked } = todo;
 
   return (
     <Item>
@@ -79,7 +81,7 @@ const TodoItem = ({ todo }) => {
       </CheckBox>
       <div className="date_col">{new Date().toLocaleDateString()}</div>
       <div className="btn_col">
-        <DeleteBtn>삭제</DeleteBtn>
+        <DeleteBtn onClick={() => onRemove(id)}>삭제</DeleteBtn>
       </div>
     </Item>
   );

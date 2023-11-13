@@ -56,11 +56,18 @@ const TodoMain = () => {
     [todos]
   );
 
+  const onRemove = useCallback(
+    (id) => {
+      setTodos(todos.filter((todo) => todo.id !== id));
+    },
+    [todos]
+  );
+
   return (
     <Main_css>
       <TodoHeader />
       <TodoInsert onInsert={onInsert} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onRemove={onRemove} />
     </Main_css>
   );
 };

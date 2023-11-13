@@ -24,7 +24,7 @@ const ItemWrapper = styled.div`
 `;
 
 // const TodoList = () => {
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, onRemove }) => {
   return (
     <div>
       <h4>Todo List 🧾</h4>
@@ -33,7 +33,10 @@ const TodoList = ({ todos }) => {
         {todos.map((todo) => (
           // todo : 배열 통으로 넣음, key : id넣음
           // list에서는 반드시 key 명시. 속도면에서 차이 많이남
-          <TodoItem todo={todo} key={todo.id} />
+
+          //onRemove : TodoMain -> TodoList -> TodoListItem 계속 넘김 (비효율)
+          //전역 저장소 만듦 : context api
+          <TodoItem todo={todo} key={todo.id} onRemove={onRemove} />
         ))}
         {/* <TodoItem />
         <TodoItem />

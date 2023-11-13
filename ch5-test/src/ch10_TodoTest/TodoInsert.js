@@ -70,7 +70,7 @@ const TodoInsert = ({ onInsert }) => {
         작성하기
         <HiPencil />
       </h4>
-
+      {/* onSubmit사용하면 enter치면 그냥 입력됨 */}
       <InsertForm onSubmit={onSubmit}>
         <InsertTodo
           value={value}
