@@ -78,7 +78,7 @@ const TodoList = ({ todos, onRemove, onToggle }) => {
       {/* 부모 리스트에서 props로 담아서, TodoListItem 전달하기. */}
       <List
         width={470}
-        height={600}
+        height={840}
         rowCount={todos.length}
         rowHeight={84}
         rowRenderer={rowRender}
