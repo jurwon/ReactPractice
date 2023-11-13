@@ -19,24 +19,39 @@ const Main_css = styled.div`
 `;
 
 const TodoMain = () => {
-  //샘플 더미 데이터를 임시 배열에 만들어서, 전달. props 테스트
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: "1번입니다.",
-      checked: false,
-    },
-    {
-      id: 2,
-      text: "2번입니다.",
-      checked: true,
-    },
-    {
-      id: 3,
-      text: "3번입니다.",
-      checked: true,
-    },
-  ]);
+  // //샘플 더미 데이터를 임시 배열에 만들어서, 전달. props 테스트
+  // const [todos, setTodos] = useState([
+  //   {
+  //     id: 1,
+  //     text: "1번입니다.",
+  //     checked: false,
+  //   },
+  //   {
+  //     id: 2,
+  //     text: "2번입니다.",
+  //     checked: true,
+  //   },
+  //   {
+  //     id: 3,
+  //     text: "3번입니다.",
+  //     checked: true,
+  //   },
+  // ]);
+
+  //성능 test (더미 데이터 3000개)
+  const createBulkTodos = () => {
+    const array = [];
+    for (let i = 1; i <= 3000; i++) {
+      array.push({
+        id: i,
+        text: `더미 데이터 : ${i}`,
+        checked: false,
+      });
+    }
+    return array;
+  };
+
+  const [todos, setTodos] = useState(createBulkTodos());
 
   const nextId = useRef(4);
 

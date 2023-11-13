@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import TodoItem from "./TodoItem";
 
@@ -25,10 +25,30 @@ const ItemWrapper = styled.div`
 
 // const TodoList = () => {
 const TodoList = ({ todos, onRemove, onToggle }) => {
+  const [search, setSearch] = useState("");
+
+  //검색창
+  const onChange = useCallback((e) => {
+    setSearch(e.target.value);
+  }, []);
+
+  //검색 결과 filter
+  const getSearchResult = ({ todo }) => {
+    //빈 문자열이면 todo 그대로 반환,
+    //그렇지 않다면 todo의 내용과 일치하는 item만 필터링
+    return search === ""
+      ? todo
+      : todo.filter((todo) => todo.text.includes(search));
+  };
+
   return (
     <div>
       <h4>Todo List 🧾</h4>
-      <SearchBar placeholder="검색어를 입력하세요" />
+      <SearchBar
+        value={search}
+        onChange={onChange}
+        placeholder="검색어를 입력하세요"
+      />
       <ItemWrapper>
         {todos.map((todo) => (
           // todo : 배열 통으로 넣음, key : id넣음
