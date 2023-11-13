@@ -33,12 +33,12 @@ const TodoList = ({ todos, onRemove, onToggle }) => {
   }, []);
 
   //검색 결과 filter
-  const getSearchResult = ({ todo }) => {
+  const getSearchResult = () => {
     //빈 문자열이면 todo 그대로 반환,
     //그렇지 않다면 todo의 내용과 일치하는 item만 필터링
     return search === ""
-      ? todo
-      : todo.filter((todo) => todo.text.includes(search));
+      ? todos
+      : todos.filter((todos) => todos.text.includes(search));
   };
 
   return (
@@ -50,7 +50,7 @@ const TodoList = ({ todos, onRemove, onToggle }) => {
         placeholder="검색어를 입력하세요"
       />
       <ItemWrapper>
-        {todos.map((todo) => (
+        {getSearchResult().map((todo) => (
           // todo : 배열 통으로 넣음, key : id넣음
           // list에서는 반드시 key 명시. 속도면에서 차이 많이남
 

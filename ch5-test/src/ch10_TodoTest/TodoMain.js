@@ -41,7 +41,7 @@ const TodoMain = () => {
   //성능 test (더미 데이터 3000개)
   const createBulkTodos = () => {
     const array = [];
-    for (let i = 1; i <= 3000; i++) {
+    for (let i = 1; i <= 10000; i++) {
       array.push({
         id: i,
         text: `더미 데이터 : ${i}`,
