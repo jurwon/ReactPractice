@@ -15,16 +15,6 @@ const Item = styled.div`
   /* &:nth-child(even) {
     background: #557c55;
   } */
-
-  &.checked {
-    svg {
-      color: #fa7070;
-    }
-    .text {
-      color: #adb5bd;
-      text-decoration: line-through;
-    }
-  }
 `;
 
 const ItemText = styled.div`
@@ -58,6 +48,16 @@ const CheckBox = styled.div`
   svg {
     font-size: 1.5rem;
   }
+
+  &.checked {
+    svg {
+      color: #fa7070;
+    }
+    .text {
+      color: #adb5bd;
+      text-decoration: line-through;
+    }
+  }
 `;
 
 //todo = {id: 1, text: "더미 데이터 요소 1번입니다.",checked: true}
@@ -75,7 +75,7 @@ const TodoItem = ({ todo }) => {
         className={cn("checkBox", { checked })}
       >
         {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
-        <ItemText>{text}</ItemText>
+        <ItemText className="text">{text}</ItemText>
       </CheckBox>
       <div className="date_col">{new Date().toLocaleDateString()}</div>
       <div className="btn_col">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { HiPencil } from "react-icons/hi";
 import styled from "styled-components";
 
@@ -39,13 +39,31 @@ const InsertBtn = styled.button`
   }
 `;
 
-const InsertContainer = styled.div`
+const InsertForm = styled.form`
   width: 100%;
   display: flex;
   gap: 10px;
 `;
 
-const TodoInsert = () => {
+const TodoInsert = ({ onInsert }) => {
+  const [value, setValue] = useState("");
+
+  //useCallback : [] mount될때만 재생성
+  //이거 해줘야 input에서 작성된 글자 표시 가능
+  const onChange = useCallback((e) => {
+    setValue(e.target.value);
+  }, []);
+
+  //onSubmit함수 : 넘어온 onInsert함수 사용
+  const onSubmit = useCallback(
+    (e) => {
+      onInsert(value);
+      setValue("");
+      e.preventDefault();
+    },
+    [onInsert, value]
+  );
+
   return (
     <div>
       <h4>
@@ -53,10 +71,14 @@ const TodoInsert = () => {
         <HiPencil />
       </h4>
 
-      <InsertContainer>
-        <InsertTodo placeholder="새로운 Todo.." />
-        <InsertBtn>추가</InsertBtn>
-      </InsertContainer>
+      <InsertForm onSubmit={onSubmit}>
+        <InsertTodo
+          value={value}
+          onChange={onChange}
+          placeholder="새로운 Todo.."
+        />
+        <InsertBtn type="submit">추가</InsertBtn>
+      </InsertForm>
     </div>
   );
 };
