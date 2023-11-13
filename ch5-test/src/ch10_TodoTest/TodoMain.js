@@ -65,28 +65,45 @@ const TodoMain = () => {
         text,
         checked: false,
       };
-      setTodos(todos.concat(todo));
+
+      //성능 개선 2번째
+      // setTodos(todos.concat(todo));
+      //차이점, useCallback 의존성 배열이 값 변경될 때마다 새로 함수 생성하는 부분을
+      // 기존의 값으로 변경 -> 함수 형태로 변경
+      //매번 새롭게 함수를 생성할 필요 없음
+      setTodos((todos) => todos.concat(todo));
       nextId.current += 1;
     },
-    [todos]
+    //성능 개선 2번째
+    // [todos]
+    []
   );
 
   const onRemove = useCallback(
     (id) => {
-      setTodos(todos.filter((todo) => todo.id !== id));
+      //성능 개선 2번째
+      //매번 새롭게 함수를 생성할 필요 없음
+      setTodos((todos) => todos.filter((todo) => todo.id !== id));
     },
-    [todos]
+    // [todos]
+    []
   );
 
   const onToggle = useCallback(
     (id) => {
+      //성능 개선 2번째
+      //매번 새롭게 함수를 생성할 필요 없음
       setTodos(
-        todos.map((todo) =>
-          todo.id === id ? { ...todo, checked: !todo.checked } : todo
-        )
+        // todos.map((todo) =>
+        //   todo.id === id ? { ...todo, checked: !todo.checked } : todo
+        (todos) =>
+          todos.map((todo) =>
+            todo.id === id ? { ...todo, checked: !todo.checked } : todo
+          )
       );
     },
-    [todos]
+    // [todos]
+    []
   );
 
   return (
