@@ -41,7 +41,7 @@ const TodoMain = () => {
   //성능 test (더미 데이터 3000개)
   const createBulkTodos = () => {
     const array = [];
-    for (let i = 1; i <= 10000; i++) {
+    for (let i = 1; i <= 10; i++) {
       array.push({
         id: i,
         text: `더미 데이터 : ${i}`,
@@ -66,6 +66,12 @@ const TodoMain = () => {
   //순서1) useReducer임포트
   // import {useReducer} from "react"
   //준비물 . 1)리듀서 함수, 2) useReducer생성, 3)dispatch함수 호출
+
+  //페이징, 한번에 데이터 전부 다 불러오는게 아니라 눈에 보이는 정보만 불러오기
+  //준비물 )
+  // 1) 모듈 설치하기 : yarn add react-virtualized
+  // 2) 각 아이템 요소의 높이를 구해야함.(두번째 요소부터) => 83.9px * 10 = 830.9px
+  // 3)
 
   //1) 리듀서 함수
   const todoReducer = (todos, action) => {
