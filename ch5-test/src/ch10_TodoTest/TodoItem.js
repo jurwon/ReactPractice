@@ -88,4 +88,5 @@ const TodoItem = ({ todo, onRemove, onToggle }) => {
   );
 };
 
-export default TodoItem;
+//맨 마지막에서 React.memo 적용하여, 1차 성능 개선
+export default React.memo(TodoItem);

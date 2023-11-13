@@ -32,7 +32,7 @@ const TodoList = ({ todos, onRemove, onToggle }) => {
     setSearch(e.target.value);
   }, []);
 
-  //검색 결과 filter
+  //검색
   const getSearchResult = () => {
     //빈 문자열이면 todo 그대로 반환,
     //그렇지 않다면 todo의 내용과 일치하는 item만 필터링
