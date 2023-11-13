@@ -38,7 +38,9 @@ const TodoList = ({ todos, onRemove, onToggle }) => {
     //그렇지 않다면 todo의 내용과 일치하는 item만 필터링
     return search === ""
       ? todos
-      : todos.filter((todos) => todos.text.includes(search));
+      : todos.filter((todos) =>
+          todos.text.toLowerCase().includes(search.toLowerCase())
+        );
   };
 
   return (
