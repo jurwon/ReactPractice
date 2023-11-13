@@ -6,6 +6,17 @@ import cn from "classnames";
 //IoMdCheckboxOutline
 //IoMdCheckbox
 
+//가상 페이징 처리하는 클래스 style-components 추가하기.
+const ListvirtualizedCss = styled.div`
+  /* 각 목록요소가 출력이 될때, 구분선 넣기 */
+  & + & {
+    border-top: 1px solid #dee2e6;
+  }
+  &:nth-child(even) {
+    background: #f8f9fa;
+  }
+`;
+
 const Item = styled.div`
   display: flex;
   align-items: center;
@@ -62,29 +73,31 @@ const CheckBox = styled.div`
 
 //todo = {id: 1, text: "더미 데이터 요소 1번입니다.",checked: true}
 //onRemove : TodoMain -> TodoList -> TodoListItem 계속 넘김 (비효율)
-const TodoItem = ({ todo, onRemove, onToggle }) => {
+const TodoItem = ({ todo, onRemove, onToggle, style }) => {
   //const text = todo.text
   //const checked = todo.checked
   //const id = todo.id
   const { id, text, checked } = todo;
 
   return (
-    <Item>
-      <CheckBox
-        /* cn 이용하면, checkbox라는 속성이  checked 의 속성에 의해서 
+    <ListvirtualizedCss className="TodoListItem-virtualized" style={style}>
+      <Item>
+        <CheckBox
+          /* cn 이용하면, checkbox라는 속성이  checked 의 속성에 의해서 
           true 이면 , className에 등록이 되고, 
           false 이면 , className에 등록이 안됨,  */
-        className={cn("checkBox", { checked })}
-        onClick={() => onToggle(id)}
-      >
-        {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
-        <ItemText className="text">{text}</ItemText>
-      </CheckBox>
-      <div className="date_col">{new Date().toLocaleDateString()}</div>
-      <div className="btn_col">
-        <DeleteBtn onClick={() => onRemove(id)}>삭제</DeleteBtn>
-      </div>
-    </Item>
+          className={cn("checkBox", { checked })}
+          onClick={() => onToggle(id)}
+        >
+          {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
+          <ItemText className="text">{text}</ItemText>
+        </CheckBox>
+        <div className="date_col">{new Date().toLocaleDateString()}</div>
+        <div className="btn_col">
+          <DeleteBtn onClick={() => onRemove(id)}>삭제</DeleteBtn>
+        </div>
+      </Item>
+    </ListvirtualizedCss>
   );
 };
 

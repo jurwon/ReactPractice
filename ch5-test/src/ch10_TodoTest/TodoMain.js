@@ -71,7 +71,7 @@ const TodoMain = () => {
   //준비물 )
   // 1) 모듈 설치하기 : yarn add react-virtualized
   // 2) 각 아이템 요소의 높이를 구해야함.(두번째 요소부터) => 83.9px * 10 = 830.9px
-  // 3)
+  // 3) TodoList로 이동하기
 
   //1) 리듀서 함수
   const todoReducer = (todos, action) => {
