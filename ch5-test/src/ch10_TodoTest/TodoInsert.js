@@ -49,7 +49,7 @@ const TodoInsert = () => {
   return (
     <div>
       <h4>
-        새로운 Todo 작성하기
+        작성하기
         <HiPencil />
       </h4>
 
