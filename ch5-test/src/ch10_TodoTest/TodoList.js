@@ -24,7 +24,7 @@ const ItemWrapper = styled.div`
 `;
 
 // const TodoList = () => {
-const TodoList = ({ todos, onRemove }) => {
+const TodoList = ({ todos, onRemove, onToggle }) => {
   return (
     <div>
       <h4>Todo List 🧾</h4>
@@ -36,7 +36,12 @@ const TodoList = ({ todos, onRemove }) => {
 
           //onRemove : TodoMain -> TodoList -> TodoListItem 계속 넘김 (비효율)
           //전역 저장소 만듦 : context api
-          <TodoItem todo={todo} key={todo.id} onRemove={onRemove} />
+          <TodoItem
+            todo={todo}
+            key={todo.id}
+            onRemove={onRemove}
+            onToggle={onToggle}
+          />
         ))}
         {/* <TodoItem />
         <TodoItem />

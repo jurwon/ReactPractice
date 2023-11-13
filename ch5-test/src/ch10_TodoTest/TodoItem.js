@@ -62,7 +62,7 @@ const CheckBox = styled.div`
 
 //todo = {id: 1, text: "더미 데이터 요소 1번입니다.",checked: true}
 //onRemove : TodoMain -> TodoList -> TodoListItem 계속 넘김 (비효율)
-const TodoItem = ({ todo, onRemove }) => {
+const TodoItem = ({ todo, onRemove, onToggle }) => {
   //const text = todo.text
   //const checked = todo.checked
   //const id = todo.id
@@ -75,6 +75,7 @@ const TodoItem = ({ todo, onRemove }) => {
           true 이면 , className에 등록이 되고, 
           false 이면 , className에 등록이 안됨,  */
         className={cn("checkBox", { checked })}
+        onClick={() => onToggle(id)}
       >
         {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
         <ItemText className="text">{text}</ItemText>
