@@ -23,6 +23,7 @@ import StyledComponent from "../ch9_component/StyledComponent";
 import TodoMain from "../ch10_TodoTest/TodoMain";
 import ImmerTest from "../ch12_immer/ImmerTest";
 import TestZone from "../ch12_immer/TestZone";
+import ApiTest from "../ch13_API_PublicDataTest/ApiTest";
 
 const Body = () => {
   return (
@@ -58,6 +59,7 @@ const Body = () => {
           <Route path="StyledComponent" element={<StyledComponent />} />
           <Route path="ImmerTest" element={<ImmerTest />} />
           <Route path="TestZone" element={<TestZone />} />
+          <Route path="ApiTest" element={<ApiTest />} />
         </Routes>
       </div>
     </BrowserRouter>

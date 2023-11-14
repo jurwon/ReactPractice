@@ -151,7 +151,9 @@ const Main = () => {
             TestZone
           </Button>
           <br />
-
+          <Button title="ApiTest" onClick={() => navigate("/ApiTest")}>
+            ApiTest
+          </Button>
           <br />
         </Container>
       </div>
