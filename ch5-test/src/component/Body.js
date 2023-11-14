@@ -26,6 +26,7 @@ import TestZone from "../ch12_immer/TestZone";
 import ApiTest from "../ch13_API_PublicDataTest/ApiTest";
 import ApiTestKoreaNews from "../ch13_API_PublicDataTest/ApiTestKoreaNews";
 import MainNews from "../ch13_API_PublicDataTest/component/MainNews";
+import NewsPage from "../ch13_API_PublicDataTest/page/NewsPage";
 
 const Body = () => {
   return (
@@ -64,6 +65,7 @@ const Body = () => {
           <Route path="ApiTest" element={<ApiTest />} />
           <Route path="ApiTestKoreaNews" element={<ApiTestKoreaNews />} />
           <Route path="MainNews" element={<MainNews />} />
+          <Route path="NewsPage" element={<NewsPage />} />
         </Routes>
       </div>
     </BrowserRouter>

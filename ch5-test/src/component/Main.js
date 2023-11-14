@@ -167,6 +167,10 @@ const Main = () => {
             MainNews
           </Button>
           <br />
+          <Button title="NewsPage" onClick={() => navigate("/NewsPage")}>
+            NewsPage
+          </Button>
+          <br />
         </Container>
       </div>
     </Wrapper>

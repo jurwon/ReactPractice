@@ -30,7 +30,7 @@ const sampleArticle = {
   urlToImage: "https://via.placeholder.com/160",
 };
 
-const NewsList = () => {
+const NewsList = ({ category }) => {
   //useEffect 이용해서 마운트시 최초 1회 데이터 받아오기
   //create, update, delete없어서
   //Rest Api 서버에서 데이터를 다 받으면 articles에 넣기
@@ -43,8 +43,11 @@ const NewsList = () => {
     const resultData = async () => {
       setLoading(true);
       try {
+        //카테고리별로 url분리하기
+        const query = category === "all" ? "" : `category=&{category}`;
+
         const response = await axios.get(
-          "https://newsapi.org/v2/top-headlines?country=kr&category=business&apiKey=b7adb4f936494b3bac62f446ab7686cb"
+          `https://newsapi.org/v2/top-headlines?country=kr&${query}&apiKey=010327a111f64954acf4bcd1a9ddc06a`
         );
         console.log(response.data.articles);
         setArticles(response.data.articles);
@@ -55,7 +58,9 @@ const NewsList = () => {
     }; // resultData async 함수 블록 끝부분,
     // 비동기 함수 만들어서, 사용하기.
     resultData();
-  }, []);
+
+    //category값에 따라 새로운 함수 생성
+  }, [category]);
 
   //주의사항 ,데이터 널 check
   if (loading) {
