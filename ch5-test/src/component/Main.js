@@ -143,6 +143,16 @@ const Main = () => {
             StyledComponent
           </Button>
           <br />
+          <Button title="ImmerTest" onClick={() => navigate("/ImmerTest")}>
+            ImmerTest
+          </Button>
+          <br />
+          <Button title="TestZone" onClick={() => navigate("/TestZone")}>
+            TestZone
+          </Button>
+          <br />
+
+          <br />
         </Container>
       </div>
     </Wrapper>

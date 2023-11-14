@@ -21,6 +21,8 @@ import InfoTestCustomHooks from "../ch8_component/InfoTestCustomHooks";
 import TestSass from "../ch9_component/TestSass";
 import StyledComponent from "../ch9_component/StyledComponent";
 import TodoMain from "../ch10_TodoTest/TodoMain";
+import ImmerTest from "../ch12_immer/ImmerTest";
+import TestZone from "../ch12_immer/TestZone";
 
 const Body = () => {
   return (
@@ -54,6 +56,8 @@ const Body = () => {
           <Route path="InfoTestCustomHooks" element={<InfoTestCustomHooks />} />
           <Route path="TestSass" element={<TestSass />} />
           <Route path="StyledComponent" element={<StyledComponent />} />
+          <Route path="ImmerTest" element={<ImmerTest />} />
+          <Route path="TestZone" element={<TestZone />} />
         </Routes>
       </div>
     </BrowserRouter>
