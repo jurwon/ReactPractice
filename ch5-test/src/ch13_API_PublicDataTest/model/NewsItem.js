@@ -26,7 +26,7 @@ const NewsItemCss = styled.div`
   }
 
   .contents {
-    margin: 0 auto;
+    /* margin: 0 auto; */
 
     a {
       color: #557c55;
