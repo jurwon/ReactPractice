@@ -44,11 +44,14 @@ const NewsList = ({ category }) => {
       setLoading(true);
       try {
         //카테고리별로 url분리하기
-        const query = category === "all" ? "" : `category=&{category}`;
+        const query = category === "all" ? "" : `category=${category}`;
+
+        console.log(query);
 
         const response = await axios.get(
           `https://newsapi.org/v2/top-headlines?country=kr&${query}&apiKey=010327a111f64954acf4bcd1a9ddc06a`
         );
+
         console.log(response.data.articles);
         setArticles(response.data.articles);
       } catch (e) {
