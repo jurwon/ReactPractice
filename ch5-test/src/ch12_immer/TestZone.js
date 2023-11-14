@@ -25,6 +25,7 @@ const TestZone = () => {
   });
 
   //데이터 추가
+  // 기존의 draft.class안의 데이터가 모두 없어지고 name으로 치환됨
   const nextState2 = produce(array, (draft) => {
     draft.class = { name: "sjw" };
   });
@@ -35,16 +36,20 @@ const TestZone = () => {
   });
 
   //데이터 제거1
+  // id가 1인 data 없어져야하는데 그대로 유지되고있음
+  // 다시 검토 필요
   const nextState4 = produce(sampleData, (draft) => {
     draft.filter((item) => item.id !== 1);
   });
 
   //splice함수 소개
   //splice(start,deletecount,newItem,newItem,...)
-  //splice(1,1) : 1이라는 인덱스부터, 1개 요소 삭제하는 내장 함수
+  //splice(1,1) : 인덱스 1부터, 1개 요소 삭제하는 내장 함수
+  //splice(1) : 인덱스 1부터 배열 변경
 
   //데이터 제거 2 : 제거한 원소를 가지는 배열 출력
   const nextState5 = produce(sampleData, (draft) => {
+    //id가 1인 요소 찾아서 배열에서 삭제.
     draft.splice(
       draft.findIndex((t) => t.id === 1),
       1

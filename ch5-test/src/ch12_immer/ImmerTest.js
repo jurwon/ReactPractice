@@ -1,5 +1,6 @@
 import React, { useCallback, useRef, useState } from "react";
 import { Button } from "antd";
+import { produce } from "immer";
 
 // 배열 내장함수(concat,map,filter, splice, 등) -> 기존배열을 유지하면서, 새롭게 생성
 // spread 연산자를 이용해서, 기존 내용의 사본을 만들어서 작업함.
@@ -11,18 +12,24 @@ import { Button } from "antd";
 //이름, 나이, 입력란에서 추가, 삭제 예제 이용
 
 const ImmerTest = () => {
+  //순서2 , useRef, 설정1
+  const inputElement = useRef(null);
+
   // id , 임의로 useRef로 만들어 사용하기.
   const nextId = useRef(1);
+
   // form , 객체의 기본값, name : "", age : ""
   const [form, setForm] = useState({
     name: "",
     age: "",
   });
+
   // sample data
   const [data, setData] = useState({
     array: [],
     dummyObject: null,
   });
+
   // 이벤트 핸들러
   const onChange = useCallback(
     (e) => {
@@ -32,11 +39,21 @@ const ImmerTest = () => {
       // const name = e.target.name
       // const value = e.target.value
       const { name, value } = e.target;
-      setForm({
-        // 기존 spread 연산자를 이용한 , 불변성 유지 하면서, 업데이트 하기.
-        ...form,
-        [name]: [value],
-      });
+
+      //방법1)
+      // 기존 spread 연산자를 이용한 , 불변성 유지 하면서, 업데이트 하기.
+      // setForm({
+      //   ...form,
+      //   [name]: [value],
+      // });
+
+      //방법 2)
+      //immer라이브러리로 수정
+      setForm(
+        produce(form, (draft) => {
+          draft[name] = value;
+        })
+      );
     },
     [form]
   );
@@ -54,18 +71,28 @@ const ImmerTest = () => {
         age: form.age,
       };
 
+      //기존 방법 1)
       // sample data의 array 에 새항목 추가.
-      setData({
-        // 기존 spread 연산자를 이용한 , 불변성 유지 하면서, 업데이트 하기.
-        ...data,
-        array: data.array.concat(info),
-      });
+      // setData({
+      //   // 기존 spread 연산자를 이용한 , 불변성 유지 하면서, 업데이트 하기.
+      //   ...data,
+      //   array: data.array.concat(info),
+      // });
+
+      //방법2)
+      //immer 사용
+      setData(
+        produce(data, (draft) => {
+          draft.array.push(info);
+        })
+      );
 
       // form data 초기화, 입력란 비우기.
       setForm({
         name: "",
         age: "",
       });
+
       // nextId 값 1 증가 시키기.
       nextId.current += 1;
       // useCallback 의 의존성 배열 , data, form.name, form.age 변경시, 새함수 생성
@@ -77,11 +104,22 @@ const ImmerTest = () => {
   const onRemove = useCallback(
     // 1 매개변수 : 콜백함수
     (id) => {
-      setData({
-        // 기존 spread 연산자를 이용한 , 불변성 유지 하면서, 업데이트 하기.
-        ...data,
-        array: data.array.filter((info) => info.id !== id),
-      });
+      //기본 방법 1)
+      // setData({
+      //   // 기존 spread 연산자를 이용한 , 불변성 유지 하면서, 업데이트 하기.
+      //   ...data,
+      //   array: data.array.filter((info) => info.id !== id),
+      // });
+
+      //immer사용 방법 2)
+      setData(
+        produce(data, (draft) => {
+          draft.array.splice(
+            draft.array.findIndex((info) => info.id === id),
+            1
+          );
+        })
+      );
     },
     // 2 매개변수
     // 의존성 배열
