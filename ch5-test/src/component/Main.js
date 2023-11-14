@@ -155,6 +155,18 @@ const Main = () => {
             ApiTest
           </Button>
           <br />
+          <Button
+            title="ApiTestKoreaNews"
+            onClick={() => navigate("/ApiTestKoreaNews")}
+          >
+            ApiTestKoreaNews
+          </Button>
+          <br />
+
+          <Button title="MainNews" onClick={() => navigate("/MainNews")}>
+            MainNews
+          </Button>
+          <br />
         </Container>
       </div>
     </Wrapper>
