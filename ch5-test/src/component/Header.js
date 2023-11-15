@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
 //yarn add react-router-dom으로 도구 설치
 
+//전역 속성 가져오기
+import ColorContext, { ColorConsumer } from "../ch14_ContextAPITest/testColor";
+
 const HeaderContainer = styled.header`
-  background-color: #557c55;
+  /* background-color: #557c55; */
+  background: red;
   padding: 10px 0;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   height: 5vh;
@@ -54,8 +58,10 @@ const handleLogoClick = () => {
 };
 
 const Header = () => {
+  const { state } = useContext(ColorContext);
+
   return (
-    <HeaderContainer>
+    <HeaderContainer style={{ backgroundColor: state.color }}>
       <HeaderContent>
         <Logo onClick={handleLogoClick}>My Logo</Logo>
         <Navigation>
@@ -74,6 +80,9 @@ const Header = () => {
             </li>
             <li>
               <a href="/MainNews">News</a>
+            </li>
+            <li>
+              <a href="/TestColorMain">Pallet</a>
             </li>
           </ul>
         </Navigation>

@@ -15,7 +15,8 @@ import { createContext, useState } from "react";
 //속성 예시2
 const ColorContext = createContext({
   //state속성 값으로
-  state: { color: "#AEDEFC", subcolor: "violet" },
+  //color : header,footer, subcolor : content
+  state: { color: "#557C55", subcolor: "#F2FFE9" },
   //actions 속성으로 함수로
   actions: {
     setColor: () => {},
@@ -25,8 +26,8 @@ const ColorContext = createContext({
 
 //provider만들기(setter)
 const ColorProvider = ({ children }) => {
-  const [color, setColor] = useState("#AEDEFC"); //하늘색
-  const [subcolor, setSubColor] = useState("#F875AA"); //분홍색
+  const [color, setColor] = useState("#557C55"); //content
+  const [subcolor, setSubColor] = useState("#F2FFE9"); //header,footer
   const value = {
     state: { color, subcolor },
     actions: { setColor, setSubColor },

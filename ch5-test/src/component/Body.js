@@ -1,7 +1,13 @@
-import React, { useState } from "react";
-import "../CSS/test.css";
+import React, { useState, useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Button, Space, DatePicker, version } from "antd";
+
+import styled from "styled-components";
+
+//전역 속성 가져오기
+import ColorContext, { ColorConsumer } from "../ch14_ContextAPITest/testColor";
+
+import "../CSS/test.css";
 
 import Join from "./Join";
 import Main from "./Main";
@@ -29,10 +35,18 @@ import MainNews from "../ch13_API_PublicDataTest/component/MainNews";
 import NewsPage from "../ch13_API_PublicDataTest/page/NewsPage";
 import TestColorMain from "../ch14_ContextAPITest/TestColorMain";
 
+const BodyDiv = styled.div`
+  /* background-color: #f2ffe9; */
+  padding: 20px;
+  /* height: 80vh; */
+`;
+
 const Body = () => {
+  const { state } = useContext(ColorContext);
+
   return (
     <BrowserRouter>
-      <div className="body">
+      <BodyDiv style={{ backgroundColor: state.subcolor }}>
         <Routes>
           <Route path="/" element={<Main />} />
           <Route index element={<Main />} />
@@ -70,7 +84,7 @@ const Body = () => {
           <Route path="NewsPage" element={<NewsPage />} />
           <Route path="TestColorMain" element={<TestColorMain />} />
         </Routes>
-      </div>
+      </BodyDiv>
     </BrowserRouter>
   );
 };

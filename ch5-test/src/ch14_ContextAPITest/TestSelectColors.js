@@ -24,11 +24,13 @@ const TestSelectColors = () => {
                 key={color}
                 style={{
                   background: color,
-                  width: "24px",
-                  height: "24px",
+                  width: "30px",
+                  height: "30px",
                   cursor: "pointer",
                 }}
+                //좌클릭
                 onClick={() => actions.setColor(color)}
+                //우클릭
                 onContextMenu={(e) => {
                   e.preventDefault();
                   actions.setSubColor(color);
