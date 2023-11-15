@@ -81,7 +81,7 @@ const Body = () => {
           <Route path="ApiTest" element={<ApiTest />} />
           <Route path="ApiTestKoreaNews" element={<ApiTestKoreaNews />} />
           <Route path="MainNews" element={<MainNews />} />
-          <Route path="NewsPage" element={<NewsPage />} />
+          <Route path="newsPageTest/:category" element={<NewsPage />} />
           <Route path="TestColorMain" element={<TestColorMain />} />
         </Routes>
       </BodyDiv>
