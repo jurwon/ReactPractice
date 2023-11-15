@@ -1,5 +1,5 @@
 import React from "react";
-//부산 테마 먹거리 요소로 구성
+//도보여행
 
 import styled from "styled-components";
 
@@ -48,8 +48,8 @@ const NewsItemCss = styled.div`
   }
 `;
 
-const PublicItem = ({ article }) => {
-  const { MAIN_TITLE, CNTCT_TEL, MAIN_IMG_THUMB, ADDR1 } = article;
+const PublicItem2 = ({ article }) => {
+  const { MAIN_TITLE, MAIN_IMG_THUMB, TRFC_INFO, ITEMCNTNTS } = article;
   return (
     <div>
       <NewsItemCss>
@@ -62,12 +62,12 @@ const PublicItem = ({ article }) => {
         )}
         <div className="contents">
           <h2>{MAIN_TITLE}</h2>
-          <p>주소 : {CNTCT_TEL}</p>
-          <p>연락처 : {ADDR1}</p>
+          <p>교통정보 : {TRFC_INFO}</p>
+          <p>{ITEMCNTNTS}</p>
         </div>
       </NewsItemCss>
     </div>
   );
 };
 
-export default PublicItem;
+export default PublicItem2;
