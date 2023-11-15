@@ -28,7 +28,6 @@ import ApiTestKoreaNews from "../ch13_API_PublicDataTest/ApiTestKoreaNews";
 import MainNews from "../ch13_API_PublicDataTest/component/MainNews";
 import NewsPage from "../ch13_API_PublicDataTest/page/NewsPage";
 import TestColorMain from "../ch14_ContextAPITest/TestColorMain";
-import TestColorBox from "../ch14_ContextAPITest/TestColorBox";
 
 const Body = () => {
   return (
@@ -70,7 +69,6 @@ const Body = () => {
           <Route path="MainNews" element={<MainNews />} />
           <Route path="NewsPage" element={<NewsPage />} />
           <Route path="TestColorMain" element={<TestColorMain />} />
-          <Route path="TestColorBox" element={<TestColorBox />} />
         </Routes>
       </div>
     </BrowserRouter>

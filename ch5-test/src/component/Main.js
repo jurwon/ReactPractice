@@ -179,13 +179,6 @@ const Main = () => {
           </Button>
           <br />
           <Button
-            title="TestColorBox"
-            onClick={() => navigate("/TestColorBox")}
-          >
-            TestColorBox
-          </Button>
-
-          <Button
             title="TestColorMain"
             onClick={() => navigate("/TestColorMain")}
           >

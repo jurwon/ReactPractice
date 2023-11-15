@@ -4,6 +4,7 @@
 import React from "react";
 import TestColorBox from "./TestColorBox";
 import colorContext, { ColorProvider } from "./testColor";
+import TestSelectColors from "./TestSelectColors";
 
 const TestColorMain = () => {
   return (
@@ -14,8 +15,9 @@ const TestColorMain = () => {
     // </div>
 
     <ColorProvider>
-      <h1>TestColorMain</h1>
+      <h1>Select Color!</h1>
       <div>
+        <TestSelectColors />
         <TestColorBox />
       </div>
     </ColorProvider>

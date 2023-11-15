@@ -8,8 +8,6 @@ import { ColorConsumer } from "./testColor";
 const TestColorBox = () => {
   return (
     <div>
-      <h1>TestColorBox</h1>
-
       {/* 예시1 */}
       {/* <colorContext.Consumer> */}
       {/* {(value) => ( */}
