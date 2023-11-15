@@ -4,6 +4,8 @@ import axios from "axios";
 import { Button } from "antd";
 
 import NewsItem from "../model/NewsItem";
+import PublicItem from "../model/PublicItem";
+import PublicItem2 from "../model/PublicItem2";
 
 //뉴스 아이템 요소 출력을 감싸는 목록 부분
 //미디어쿼리 넣어서 반응형으로, 특정 크기를 기준으로 웹 브라우저 창의 크기 변경시
@@ -39,21 +41,122 @@ const NewsList = ({ category }) => {
   //data 받는중이면 true, 다 받았으면 false
   const [loading, setLoading] = useState(null);
 
+  //상태변수 newsAPI : 0 , 부산먹거리 : 1 , 도보여행 : 2
+  const [dataType, setDataType] = useState(0);
+
   useEffect(() => {
     const resultData = async () => {
       setLoading(true);
       try {
-        //카테고리별로 url분리하기
-        const query = category === "all" ? "all" : `category=${category}`;
+        //뉴스 api
+        const query = category === "all" ? "" : `&category=${category}`;
 
         console.log(query);
 
-        const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=kr&${query}&apiKey=010327a111f64954acf4bcd1a9ddc06a`
-        );
+        // const response = await axios.get(
+        //   `https://newsapi.org/v2/top-headlines?country=kr&${query}&apiKey=010327a111f64954acf4bcd1a9ddc06a`
+        // );
 
-        console.log(response.data.articles);
-        setArticles(response.data.articles);
+        // //부산 테마먹거리
+        // const query2 = category === "busanFood" ? `FoodService/getFoodKr` : "";
+        // const response2 = await axios.get(
+        //   `https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=ALRX9GpugtvHxcIO%2FiPg1vXIQKi0E6Kk1ns4imt8BLTgdvSlH%2FAKv%2BA1GcGUQgzuzqM3Uv1ZGgpG5erOTDcYRQ%3D%3D&numOfRows=100&pageNo=1&resultType=json`
+        // );
+
+        // //도보여행
+        // const query3 =
+        //   category === "busanWalking" ? `WalkingService/getWalkingKr` : "";
+        // const response3 = await axios.get(
+
+        //   `https://apis.data.go.kr/6260000/WalkingService/getWalkingKr?serviceKey=ALRX9GpugtvHxcIO%2FiPg1vXIQKi0E6Kk1ns4imt8BLTgdvSlH%2FAKv%2BA1GcGUQgzuzqM3Uv1ZGgpG5erOTDcYRQ%3D%3D&pageNo=1&numOfRows=100&resultType=json`
+        // );
+
+        switch (query) {
+          case "":
+            //전체 기사 조회
+            const response = await axios.get(
+              `https://newsapi.org/v2/top-headlines?country=kr&apiKey=010327a111f64954acf4bcd1a9ddc06a`
+            );
+            setArticles(response.data.articles);
+            setDataType(0);
+
+            break;
+          case "&category=business":
+            // 뉴스 API 주소 business 주제
+            const response_business = await axios.get(
+              `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=b7adb4f936494b3bac62f446ab7686cb`
+            );
+            setArticles(response_business.data.articles);
+            // 상태변수, 타입 지정.
+            setDataType(0);
+            break;
+          case "&category=entertainment":
+            // 뉴스 API 주소 entertainment 주제
+            const response_entertainment = await axios.get(
+              `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=b7adb4f936494b3bac62f446ab7686cb`
+            );
+            setArticles(response_entertainment.data.articles);
+            // 상태변수, 타입 지정.
+            setDataType(0);
+            break;
+          case "&category=health":
+            // 뉴스 API 주소 health 주제
+            const response_health = await axios.get(
+              `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=b7adb4f936494b3bac62f446ab7686cb`
+            );
+            setArticles(response_health.data.articles);
+            // 상태변수, 타입 지정.
+            setDataType(0);
+            break;
+          case "&category=science":
+            // 뉴스 API 주소 science 주제
+            const response_science = await axios.get(
+              `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=b7adb4f936494b3bac62f446ab7686cb`
+            );
+            setArticles(response_science.data.articles);
+            // 상태변수, 타입 지정.
+            setDataType(0);
+            break;
+          case "&category=sports":
+            // 뉴스 API 주소 sports 주제
+            const response_sports = await axios.get(
+              `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=b7adb4f936494b3bac62f446ab7686cb`
+            );
+            setArticles(response_sports.data.articles);
+            // 상태변수, 타입 지정.
+            setDataType(0);
+            break;
+          case "&category=technology":
+            // 뉴스 API 주소 technology 주제
+            const response_technology = await axios.get(
+              `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=b7adb4f936494b3bac62f446ab7686cb`
+            );
+            setArticles(response_technology.data.articles);
+            // 상태변수, 타입 지정.
+            setDataType(0);
+            break;
+
+          case "&category=busanFood":
+            //부산 테마먹거리
+            const response2 = await axios.get(
+              `https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=ALRX9GpugtvHxcIO%2FiPg1vXIQKi0E6Kk1ns4imt8BLTgdvSlH%2FAKv%2BA1GcGUQgzuzqM3Uv1ZGgpG5erOTDcYRQ%3D%3D&numOfRows=100&pageNo=1&resultType=json`
+            );
+            setArticles(response2.data.getFoodKr.item);
+            setDataType(1);
+            break;
+
+          case "&category=busanWalking":
+            //부산 테마먹거리
+            const response3 = await axios.get(
+              `https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=ALRX9GpugtvHxcIO%2FiPg1vXIQKi0E6Kk1ns4imt8BLTgdvSlH%2FAKv%2BA1GcGUQgzuzqM3Uv1ZGgpG5erOTDcYRQ%3D%3D&numOfRows=100&pageNo=1&resultType=json`
+            );
+            setArticles(response3.data.getWalkingKr.item);
+            setDataType(2);
+            break;
+
+          default:
+            alert("카테고리를 선택해주세요.");
+        }
       } catch (e) {
         console.log(e);
       }
@@ -75,11 +178,46 @@ const NewsList = ({ category }) => {
     return null;
   }
 
+  const choosePage = ({ articles }) => {
+    switch (dataType) {
+      case 0:
+        return (
+          <div>
+            {articles.map((article) => (
+              <NewsItem key={article.url} article={article} />
+            ))}
+          </div>
+        );
+
+      case 1:
+        return (
+          <div>
+            {articles.map((article) => (
+              <PublicItem key={article.MAIN_IMG_THUMB} article={article} />
+            ))}
+          </div>
+        );
+
+      case 2:
+        return (
+          <div>
+            {articles.map((article) => (
+              <PublicItem2 key={article.MAIN_IMG_THUMB} article={article} />
+            ))}
+          </div>
+        );
+
+      default:
+        return null;
+    }
+  };
+
   return (
     <NewsListCss>
-      {articles.map((article) => (
+      {choosePage({ articles })}
+      {/* {articles.map((article) => (
         <NewsItem key={article.url} article={article} />
-      ))}
+      ))} */}
       {/* <NewsItem article={sampleArticle} />
       <NewsItem article={sampleArticle} />
       <NewsItem article={sampleArticle} />

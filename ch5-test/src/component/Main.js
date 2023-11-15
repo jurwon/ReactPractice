@@ -167,14 +167,29 @@ const Main = () => {
             MainNews
           </Button>
           <br />
+
           <Button
             title="newsPageTest/:category"
             onClick={() => {
-              // navigate("/newsPageTest/:category");
+              //navigate("/newsPageTest/:category");
               navigate("/newsPageTest/all");
             }}
           >
-            newsPageTest/:category
+            NewsApi Param사용
+          </Button>
+          <br />
+          <Button
+            title="TestColorBox"
+            onClick={() => navigate("/TestColorBox")}
+          >
+            TestColorBox
+          </Button>
+
+          <Button
+            title="TestColorMain"
+            onClick={() => navigate("/TestColorMain")}
+          >
+            TestColorMain
           </Button>
           <br />
         </Container>

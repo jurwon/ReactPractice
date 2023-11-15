@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 //yarn add react-router-dom으로 도구 설치
-import { useNavigate } from "react-router-dom";
 
 const HeaderContainer = styled.header`
   background-color: #557c55;
@@ -24,6 +23,7 @@ const Logo = styled.div`
   font-weight: bold;
   color: #fa7070;
   padding: 10px;
+  cursor: pointer;
 `;
 
 const Navigation = styled.nav`
@@ -49,11 +49,15 @@ const Navigation = styled.nav`
   }
 `;
 
+const handleLogoClick = () => {
+  window.location.href = "/";
+};
+
 const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <Logo>My Logo</Logo>
+        <Logo onClick={handleLogoClick}>My Logo</Logo>
         <Navigation>
           <ul>
             <li>
@@ -67,6 +71,9 @@ const Header = () => {
             </li>
             <li>
               <a href="/TodoMain">TodoList</a>
+            </li>
+            <li>
+              <a href="/MainNews">News</a>
             </li>
           </ul>
         </Navigation>
