@@ -44,7 +44,7 @@ const NewsList = ({ category }) => {
       setLoading(true);
       try {
         //카테고리별로 url분리하기
-        const query = category === "all" ? "" : `category=${category}`;
+        const query = category === "all" ? "all" : `category=${category}`;
 
         console.log(query);
 
