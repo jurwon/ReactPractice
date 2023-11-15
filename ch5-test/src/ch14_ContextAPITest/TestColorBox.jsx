@@ -8,7 +8,7 @@ import { ColorConsumer } from "./testColor";
 const TestColorBox = () => {
   return (
     <div>
-      <h1>전역 속성 가져오기</h1>
+      <h1>TestColorBox</h1>
 
       {/* 예시1 */}
       {/* <colorContext.Consumer> */}
@@ -17,7 +17,7 @@ const TestColorBox = () => {
       {/* 예시2 */}
       <ColorConsumer>
         {/* 값가져오기  children 부분에 값의 형태가 아니라 함수 형태로 사용중. child as Function */}
-        {(state) => (
+        {({ state }) => (
           <div>
             <div
               style={{

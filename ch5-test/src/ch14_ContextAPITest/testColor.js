@@ -23,7 +23,7 @@ const ColorContext = createContext({
   },
 });
 
-//provider만들기
+//provider만들기(setter)
 const ColorProvider = ({ children }) => {
   const [color, setColor] = useState("#AEDEFC"); //하늘색
   const [subcolor, setSubColor] = useState("#F875AA"); //분홍색
@@ -39,8 +39,9 @@ const ColorProvider = ({ children }) => {
   );
 };
 
-//Consumer : getter
+//Consumer(getter)
 const { Consumer: ColorConsumer } = ColorContext;
+
 // 추가
 export { ColorProvider, ColorConsumer };
 
