@@ -169,13 +169,12 @@ const Main = () => {
           <br />
           <Button
             title="newsPageTest/:category"
-            type="primary"
             onClick={() => {
               // navigate("/newsPageTest/:category");
               navigate("/newsPageTest/all");
             }}
           >
-            newsPageTest/:category 확인
+            newsPageTest/:category
           </Button>
           <br />
         </Container>

@@ -11,18 +11,21 @@ const categories = [
   { name: "science", text: "과학" },
   { name: "sports", text: "스포츠" },
   { name: "technology", text: "기술" },
-  { name: "busanFood", text: "부산테마먹거리" },
-  { name: "busanWalking", text: "부산보도여행" },
+  // { name: "busanFood", text: "부산테마먹거리" },
+  // { name: "busanWalking", text: "부산보도여행" },
 ];
 
 //css
 const CategoriesBlockCss = styled.div`
   display: flex;
+  justify-content: center;
   padding: 1rem;
   width: 0 auto;
+  margin: 0 auto;
+  max-width: 768px;
 
-  background-image: url("https://cdn.pixabay.com/animation/2022/07/30/22/01/22-01-29-66_512.gif");
-  background-size: 10%;
+  /* background-image: url("https://cdn.pixabay.com/animation/2022/07/30/22/01/22-01-29-66_512.gif");
+  background-size: 10%; */
 
   @media screen and (max-width: 768px) {
     width: 100%;
