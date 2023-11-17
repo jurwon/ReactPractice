@@ -34,6 +34,7 @@ import ApiTestKoreaNews from "../ch13_API_PublicDataTest/ApiTestKoreaNews";
 import MainNews from "../ch13_API_PublicDataTest/component/MainNews";
 import NewsPage from "../ch13_API_PublicDataTest/page/NewsPage";
 import TestColorMain from "../ch14_ContextAPITest/TestColorMain";
+import FireMain from "../ch15_Firebase/FireMain";
 
 const BodyDiv = styled.div`
   /* background-color: #f2ffe9; */
@@ -83,6 +84,7 @@ const Body = () => {
           <Route path="MainNews" element={<MainNews />} />
           <Route path="newsPageTest/:category" element={<NewsPage />} />
           <Route path="TestColorMain" element={<TestColorMain />} />
+          <Route path="FireMain" element={<FireMain />} />
         </Routes>
       </BodyDiv>
     </BrowserRouter>

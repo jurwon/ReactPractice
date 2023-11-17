@@ -185,6 +185,10 @@ const Main = () => {
             TestColorMain
           </Button>
           <br />
+          <Button title="FireMain" onClick={() => navigate("/FireMain")}>
+            FireMain
+          </Button>
+          <br />
         </Container>
       </div>
     </Wrapper>
