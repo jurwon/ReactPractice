@@ -12,16 +12,25 @@ import React from "react";
 // 준비작업 샘플 테스트 1
 // import
 import { db } from "./FirebaseConfig";
-
 // 공식 문서 샘플 코드를 그대로 가져온 경우.
 // https://firebase.google.com/docs/firestore/manage-data/add-data?hl=ko#web-modular-api
-import { doc, setDoc, getDoc } from "firebase/firestore";
+import {
+  doc,
+  setDoc,
+  getDoc,
+  collection,
+  addDoc,
+  Timestamp,
+  updateDoc,
+  deleteDoc,
+} from "firebase/firestore";
 import { Button } from "antd";
 
 // Add a new document in collection "cities"
 
 const FireStoreTest = () => {
   // 샘플 확인용.
+
   const testSetDoc = async () => {
     //db : 파이어베이스 스토어 의미, 이용하기위한 초기값이 들어 있는 인스턴스
     // cities : 컬렉션,(테이블과 동일 역할)
@@ -52,10 +61,37 @@ const FireStoreTest = () => {
     }
   };
 
+  //자동 ID생성
+  const testAddDoc = async () => {
+    const docRef = await addDoc(collection(db, "cities"), {
+      name: "Tokyo",
+      country: "Japan",
+      regDate: Timestamp.fromDate(new Date()),
+    });
+    console.log("Document written with ID: ", docRef.id);
+  };
+
+  const testUpdateDoc = async () => {
+    const LARef = doc(db, "cities", "LA");
+
+    await updateDoc(LARef, {
+      capital: false,
+      name: "sjw",
+      regDate: Timestamp.fromDate(new Date()),
+    });
+  };
+
+  const testDeleteDoc = async () => {
+    await deleteDoc(doc(db, "cities", "LA"));
+  };
+
   return (
     <div>
       <Button onClick={() => testSetDoc()}>Test setDoc</Button>
       <Button onClick={() => testGetDoc()}>Test getDoc</Button>
+      <Button onClick={() => testAddDoc()}>Test addDoc</Button>
+      <Button onClick={() => testUpdateDoc()}>Test updateDoc</Button>
+      <Button onClick={() => testDeleteDoc()}>Test deleteDoc</Button>
     </div>
   );
 };
